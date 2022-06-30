@@ -1,4 +1,5 @@
 pipeline {
+
 	agent any
 	parameters {
 		string(name: 'VERSION', defaultValue: '', description: 'deployment version')
@@ -19,6 +20,7 @@ pipeline {
 		stage("deploy") {
 			steps {
 				echo 'deploying the applicaiton...'
+				echo "deploying version $(params.VERSION)"
 			}
 		}
 	}
